@@ -3,6 +3,7 @@ package org.geekbang.thinking.in.spring.ioc.overview.dependency.injection;
 import org.geekbang.thinking.in.spring.ioc.overview.repository.UserRepository;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
 
@@ -21,7 +22,12 @@ public class DependencyInjectionDemo {
 
         //此处是依赖注入（依赖来源二：内建依赖 (自己没有创建但是可以注入的Bean)）
         System.out.println(userRepository.getBeanFactory()); //由于配置了 autowire = 'byType' 所以此处不为null，注入的是内建的对象(容器)
-//        System.out.println(beanFactory == userRepository.getBeanFactory());
+        System.out.println(beanFactory == userRepository.getBeanFactory()); //false
+
+        //ApplicationContext     BeanFactory 区别？
+        //AbstractRefreshableApplicationContext 在内部组装了一个DefaultListableBeanFactory,
+
+
 
         //此处是依赖查找 (会报错，没有定义 BeanFactory 类型的Bean )
 //        System.out.println(beanFactory.getBean(BeanFactory.class));
