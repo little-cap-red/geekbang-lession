@@ -6,18 +6,24 @@
         <artifactId>geekbang-lessons</artifactId>
         <groupId>org.geekbang</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <description>spring ioc总览</description>
+    <description>spring bean基础</description>
 
-    <artifactId>ioc-container-overview</artifactId>
+    <artifactId>spring-bean</artifactId>
 
     <dependencies>
         <!--spring核心依赖-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <!--复用 ioc-container-overview -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>ioc-container-overview</artifactId>
+            <version>${version}</version>
         </dependency>
     </dependencies>
 
